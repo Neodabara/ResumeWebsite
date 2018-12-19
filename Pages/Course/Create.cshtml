@@ -1,0 +1,44 @@
+﻿@page
+@model ResumeWebsite.Pages.Course.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+
+<h4>Courses</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Courses.CourseName" class="control-label"></label>
+                <input asp-for="Courses.CourseName" class="form-control" />
+                <span asp-validation-for="Courses.CourseName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Courses.CourseNumber" class="control-label"></label>
+                <input asp-for="Courses.CourseNumber" class="form-control" />
+                <span asp-validation-for="Courses.CourseNumber" class="text-danger"></span>
+            </div>
+           <div class="form-group">
+                <label asp-for="Courses.CourseID" class="control-label"></label>
+                <input asp-for="Courses.CourseID" class="form-control" />
+                <span asp-validation-for="Courses.CourseID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
